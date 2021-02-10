@@ -1,0 +1,133 @@
+Task: 
+1)To draw the shapes using Turtle
+
+The major shapes that are needed to construct the Testbench architecture are square and rectangle. Below is the Python script to draw square and rectangle and also connectivity
+
+Steps:
+1.Import the turtle library
+2.Set the Screen color
+3.Instantiate the object for Turtle
+4.Set the pen color 
+5.Move to the desired location(co-ordinate) to draw the shape 
+6.Use begin_fill and end_fill to fill in the shape
+
+Square and rectangle
+-------------------------
+import turtle
+s=turtle.Screen()
+s.bgcolor("light blue")
+w = turtle.Turtle()
+w.pencolor("black")
+w.fillcolor("red")
+w.penup()        #Pen up before moving to the desired co-ordinate          
+w.goto(-200,50)  #To move the turtle to the co-ordinate(-200,50) 
+w.pendown()      #Pen down to start drawing
+w.begin_fill()   #To start filling the color
+#To draw a square
+for i in range(4):
+ w.forward(100)
+ w.left(90)
+w.end_fill()
+# To draw rectangle
+w.penup()
+w.goto(200,50)
+w.pendown()
+w.fillcolor("green")
+w.begin_fill()
+w.forward(100)
+w.left(90)
+w.forward(200)
+w.left(90)
+w.forward(100)
+w.left(90)
+w.forward(200)
+w.left(90)
+w.end_fill()
+w.hideturtle()   #Hide the turtle pointer
+
+
+
+
+
+Square inside a square
+----------------------------------
+import turtle
+s=turtle.Screen()
+s.bgcolor("light blue")
+w = turtle.Turtle()
+w.pencolor("black")
+w.fillcolor("red")
+w.penup()
+w.goto(-200,50)
+w.pendown()
+w.begin_fill()
+#To draw a square
+for i in range(4):
+ w.forward(100)
+ w.left(90)
+w.penup()
+w.goto(-50,0)
+w.pendown()
+#To draw a square
+for i in range(4):
+ w.left(90)
+ w.forward(200)
+w.end_fill()
+
+Task: 
+2)To draw the connection between 2 squares and to include text
+
+Steps:
+1.Import the turtle library
+2.Set the Screen color
+3.Instantiate the object for Turtle
+4.Set the pen color 
+5.Move to the desired location(co-ordinate) to draw the shape 
+6.Use begin_fill and end_fill to fill in the shape
+7.Move to the centre of the square to draw the arrow head
+8.Write the text at the centre of the turtle pointer 
+
+
+Connecting 2 squares with an arrow head and including text
+--------------------------
+import turtle
+s=turtle.Screen()
+s.bgcolor("light blue")
+w = turtle.Turtle()
+w.pencolor("black")
+w.fillcolor("red")
+w.penup()
+w.goto(-200,0)
+w.pendown()
+w.begin_fill()
+#To draw a square
+for i in range(4):
+ w.forward(100)
+ w.left(90)
+w.penup()
+w.goto(100,0)
+w.pendown()
+#To draw a square
+for i in range(4):
+ w.forward(100)
+ w.left(90)
+w.end_fill()
+w.penup()
+w.goto(-100,50)
+w.pendown()
+w.forward(200)
+
+#To draw the arrow head
+w.left(45)
+w.backward(10)
+w.forward(10)
+w.right(90)
+w.backward(10)
+
+#To write the text
+w.penup()
+w.goto(0,50)
+w.pendown()
+w.write("connect",align="center")  #write the text in centre of the turtle pointer                 
+w.hideturtle()
+
