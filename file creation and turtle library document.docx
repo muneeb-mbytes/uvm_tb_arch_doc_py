@@ -1,0 +1,44 @@
+•	Download latest python into system in not present.
+•	Get Pycharm tool or can use command prompt window, if working online you may use google colab.
+•	Create function 
+def function_name():
+      -------
+•	Calling function 
+Function_name()
+•	Open a file to read and close
+Variable_name = open(r”file_path”,”r”)
+Variable_name.close()
+•	Open a file to write and append/create and close
+Variable_name = open(r”file_path”,”w+”)
+Variable_name.close()
+•	Read contents of file
+Variable_name = open(r”file_path”,”r”)
+Contents = variable_name.read()
+To print 
+Print(contents)
+•	Turtle library importing.
+Import turtle
+•	Move turtle forward and distance
+Turtle.forward(distance)
+•	Make turtle turn and angle 
+Turtle.right(angle)
+Turtle.left(angle)
+•	Turtle move without writing and then start writing
+Turtle.penup() --- no write
+Turtle.pendown – starts writing
+•	Move to non default position (0,0)[x-axis,y-axis]
+Turtle.goto(x-axis,y-axis)
+•	Turtle drawing speed, color and pensize.
+Turtle.speed(10)
+Turtle.color(“magenta”)
+Turtle.pensize(5)
+•	Writing text in turtle canvas
+Turtle.write(“text to be written”,align=”left”,font=(“Arial”,10,”Normal”))
+Turtle.write(“text to be written”,align=”center”,font=(“Verdana”,20,”Italics”))
+•	Turtle screen auto closes after drawing to close only on click
+Turtle.exitonclick()
+•	Regular expression library for pattern search
+Re.search(“abc”,file_name_to_be_searched)
+Before using import library
+Import re
+
