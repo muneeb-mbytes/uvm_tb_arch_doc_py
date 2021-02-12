@@ -33,26 +33,26 @@ t.speed(30)
 def top():                                             #Draw the top 
  t.fillcolor("grey")                              #Filling the rectangle with the color
  t.penup()
- t.goto(-650,330)
+ t.goto(-650,330)                               #To move the turtle to the co-ordinate(-650,330)
  t.pendown()
  for i in range(2):                             #Draw the Rectangle
   t.begin_fill()
-  t.forward(1300)
-  t.right(90)
-  t.forward(480)
+  t.forward(1300)               #Length of the rectangle
+  t.right(90)                        #Turn right by 90 degree
+  t.forward(480)                 #Widthof the rectangle
   t.right(90)
   t.end_fill()
  t.penup()
- t.goto(-630,310)
+ t.goto(-630,310) #To move the turtle to the co-ordinate(-630,310)
  t.pendown()
- t.write("top",align="center",font=10)    #Writing text to represent the “top”
+ t.write("top",align="center",font=10)    #Write the text to represent the “top”
  t.hideturtle()
 def test():                                        #Draw the test 
  t.fillcolor("light blue")                 
  t.penup()
- t.goto(-630,300)
+ t.goto(-630,300)    #To move the turtle to the co-ordinate(-630,300)
  t.pendown()
- for i in range(2):
+ for i in range(2):        #Draw the rectangle
   t.begin_fill()
   t.forward(1260)
   t.right(90)
@@ -60,16 +60,16 @@ def test():                                        #Draw the test
   t.right(90)
   t.end_fill()
  t.penup()
- t.goto(-600,280)
+ t.goto(-600,280)   #To move the turtle to the co-ordinate(-600,280)
  t.pendown()
- t.write("test",align="center",font=10)
+ t.write("test",align="center",font=10)  #Write the text to represent the “test”
  #t.hideturtle()
 def env():                                              #Draw the env
  t.fillcolor("light green")
  t.penup()
- t.goto(-600,270)
+ t.goto(-600,270)    #To move the turtle to the co-ordinate(-600,270)
  t.pendown()
- for i in range(2):
+ for i in range(2):  #Draw the rectangle
   t.begin_fill()
   t.forward(1200)
   t.right(90)
@@ -79,19 +79,19 @@ def env():                                              #Draw the env
  t.penup()
  t.goto(-580,250)
  t.pendown()
- t.write("env",align="center",font=10)
+ t.write("env",align="center",font=10)  #Write the text to represent the “env”
  scoreboard()              #Call this method to draw the scoreboard
  for i in range(int(agent_number)):   #Call this method to draw the agent and its components based on the number of agents
   agent(i)
   sequencer(i)
   driver(i)
   monitor(i)
-def scoreboard():
+def scoreboard():                   #Draw the scoreboard
  t.fillcolor("light yellow")
  t.penup()
- t.goto(-280,240)
+ t.goto(-280,240)  #To move the turtle to the co-ordinate(-280,240)
  t.pendown()
- for i in range(2):
+ for i in range(2):  #Draw the rectangle
   t.begin_fill()
   t.forward(350)
   t.right(90)
@@ -101,17 +101,17 @@ def scoreboard():
  t.penup()
  t.goto(-105,215)
  t.pendown()
- t.write("Scoreboard",align="center",font=10)
-def agent(y):
+ t.write("Scoreboard",align="center",font=10)  #Write the text to represent the “scoreboard”
+def agent(y):       #Draw the agent
  t.fillcolor("pink")
  t.penup()
  print(y,int(agent_number))
- x = y * ((1120/int(agent_number)) + 10)
- t.goto(-560 + x,160)
+ x = y * ((1120/int(agent_number)) + 10)   #Calculates where to start drawing the agents (The starting point of agent N+1 depends on where the agent N ends)
+ t.goto(-560 + x,160)    #Move the turtle to the co-ordinate based on the number of agents
  t.pendown()
- for i in range(2):
+ for i in range(2):  #Draw the rectangle
   t.begin_fill()
-  t.forward(1120/int(agent_number))
+  t.forward(1120/int(agent_number))  #Adjust the length of the rectangle based on agent number(If agent_number is 1 then move 1120 units forward)
   t.right(90)
   t.forward(220)
   t.right(90)
@@ -119,28 +119,29 @@ def agent(y):
  t.penup()
  t.goto(-500 + x,120)
  t.pendown()
- t.write("Agent"+ str(y+1),align="center",font=10)
-def sequencer(y):
+ t.write("Agent"+ str(y+1),align="center",font=10)   #Name the agents
+def sequencer(y):   #Draw the sequencer
  t.penup()
  print(y,int(agent_number))
- x = y * ((1120/int(agent_number)) + 10)
- t.goto(-550 + x,100)
+ x = y * ((1120/int(agent_number)) + 10)  #Calculates where to start drawing the sequencer
+ t.goto(-550 + x,100)  #Move the turtle to the co-ordinate based on the number of agents
  t.pendown()
  for i in range(2):
-  t.forward(260/int(agent_number))
+  t.forward(260/int(agent_number))  #decide the length of the rectangle based on the number of agents
   t.right(90)
   t.forward(80)
   t.right(90)
  t.penup()
  t.goto((-550 + 130/int(agent_number))+ x,60)
  t.pendown()
- t.write("Sequencer",align="center",font=10)
+ t.write("Sequencer",align="center",font=10) #Name the sequencer 
 #To draw arrow head between sequencer and driver
 t.penup()
- t.goto(-550 + x + (260/int(agent_number)) ,60)
+ t.goto(-550 + x + (260/int(agent_number)) ,60)  #Move to the centre of the sequencer
  t.pendown()
- z = (300/int(agent_number)) + 10
- t.goto((-540 + z + x),60)
+ z = (300/int(agent_number)) + 10 #Calculates the distance in units between the sequencer and driver
+ t.goto((-540 + z + x),60)   #Draw a line connecting the sequencer and driver
+#To draw the arrow head
  t.left(45)
  t.backward(10)
  t.forward(10)
@@ -148,29 +149,30 @@ t.penup()
  t.backward(10)
  t.forward(10)
  t.left(45)
-def driver(y):
+def driver(y):  #Draw the driver
  t.penup()
  print(y,int(agent_number))
- x = y * ((1120/int(agent_number)) + 10)
- z = (300/int(agent_number)) + 10
- t.goto((-540 + z + x),100)
+ x = y * ((1120/int(agent_number)) + 10)  #Calculates where to start drawing the sequencer
+ z = (300/int(agent_number)) + 10   #Calculates the distance between the sequencer and driver so as to set the turtle pointer
+ t.goto((-540 + z + x),100)  #Move to the co-ordinates based on the number of agent
  t.pendown()
  for i in range(2):
-  t.forward(300/int(agent_number))
+  t.forward(300/int(agent_number))   #Decide the length of the rectangle based on the number of agents
   t.right(90)
   t.forward(80)
   t.right(90)
  t.penup()
  t.goto(-540 + z + x + 150/int(agent_number),60)
  t.pendown()
- t.write("Driver",align="center",font=10)
+ t.write("Driver",align="center",font=10)  #Name the driver
 t.penup()
- t.goto(-540 + z + x + 150/int(agent_number),20)
+ t.goto(-540 + z + x + 150/int(agent_number),20)  #Move to the centre of the driver
 #Draw the connectivity between Driver and interface
  t.pendown()
- t.right(90)
+ t.right(90) #Moves towards the right and draw the line
  t.pendown()
  t.forward(200)
+#To draw the arrow head
  t.left(45)
  t.backward(10)
  t.forward(10)
@@ -179,30 +181,31 @@ t.penup()
  t.forward(10)
  t.left(45)
  t.left(90)
-def monitor(y):
+def monitor(y):   #Draw the monitor
  t.penup()
  print(y,int(agent_number))
- x = y * ((1120/int(agent_number)) + 10)
- z= 2 * (300/int(agent_number)) + 20
- t.goto((-540 + z + x),100)
+ x = y * ((1120/int(agent_number)) + 10)   #Calculates where to start drawing the monitor
+ z= 2 * (300/int(agent_number)) + 20  #Calculate the distance in units between driver and monitor
+ t.goto((-540 + z + x),100)  #Move to the co-ordinate based on the number of agents
  t.pendown()
- for i in range(2):
+ for i in range(2): #Draw the rectangle
   t.forward(300/int(agent_number))
   t.right(90)
   t.forward(80)
   t.right(90)
  t.penup()
- t.goto(-540 + z + x + 150/int(agent_number),60)
+ t.goto(-540 + z + x + 150/int(agent_number),60)  
  t.pendown()
- t.write("Monitor",align="center",font=10)
+ t.write("Monitor",align="center",font=10)   #Name the monitor
 t.penup()
- t.goto(-540 + z + x + 150/int(agent_number),20)
+ t.goto(-540 + z + x + 150/int(agent_number),20)  #Move to the centre of the monitor
  t.pendown()
 #Draw the connectivity between monitor and interface
  t.right(90)
  t.pendown()
  t.forward(200)
  t.backward(200)
+#Move the turtle pointer backward and draw the arrow head pointing the monitor
  t.left(180)
  t.left(45)
  t.backward(10)
