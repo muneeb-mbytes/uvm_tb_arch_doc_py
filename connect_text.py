@@ -1,3 +1,4 @@
+#Refer basic.docx for detailed explanation
 import turtle
 s=turtle.Screen()
 s.bgcolor("light blue")
