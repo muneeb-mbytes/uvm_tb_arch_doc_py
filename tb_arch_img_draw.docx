@@ -1,0 +1,79 @@
+Task: (Using Image,ImageDraw module)
+To read the file which contains the information about Testbench  and to draw the agent components
+Steps:
+1.Read the file tb_info.txt which contains the agent information (Number of agent). Read the first line and then using split method the words are stored in a list form which the number can be retrieved.
+2.Define the method top,test,env ,agent,scoreboard,driver,sequencer and monitor  to draw the corresponding component
+3.In the method definition, use the in-built function called rectangle from the ImageDraw module to draw the components
+    The arguments to the functions are:
+        1.x0,y0 – Starting co-ordinate to draw the rectangle
+        2.x1,y1  - End co-ordinate
+        3.Fill color – Color to fill in the rectangle
+        4.Outline – Outline color for the shape 
+5 .Agents and its components are constructed based on the agent numbers. From env() the scoreboard() and agent components are called
+6.The text method in Image Draw module issued to include the text. The parameters are: 
+     1.Co-ordinates – where the text needs to be inserted
+     2.Text in the form of string
+     3.Color for the text
+The information collected from the testbench are written in a file. Here the tb_info.txt  file contains agent information (number of agents) 
+ ***************** tb_info.txt*********************
+   Agent = 2
+ 
+This file is taken as an input to draw the TB architecture.
+*********************tb_arch_imgdraw.py*******************
+from PIL import ImageDraw,Image      # Import Image and ImageDraw module form PIL(Python Image Library)
+f=open("tb_info.txt",'r') #The input file(tb_info.txt) is read and then the information is extracted       
+content = f.readline()       #Read the first line
+agent=content.split()       #Split the words and store it in an array agent[] 
+agent_number=agent[2]  #The variable agent_number now contains the number of agent in the TB
+f.close()
+print(agent_number)
+img=Image.new("RGB",(500,500),"white")  #Create a new image with screen size as 500X500 and color as white
+draw=ImageDraw.Draw(img)  #Get the pointer to draw on the image
+def top():    #Draw the top 
+ draw.rectangle((5,5,495,360),fill="blue",outline="black") #Call the method rectangle with the desired parameters((x0,y0,x1,y1),fill_color,outline)
+ draw.text((8,8),"top",fill="black")   #Call the method text to insert the text ((x,y),text,fill_color)
+def test():   #Draw the test
+ draw.rectangle((20,20,480,340),fill="green",outline="black")
+ draw.text((22,22),"test",fill="black")   #Call the method text to insert the text ((x,y),text,fill_color)
+def env():  #Draw the env
+ draw.rectangle((35,35,465,320),fill="grey",outline="black") #Call the method rectangle with the desired parameters((x0,y0,x1,y1),fill_color,outline)
+ draw.text((38,38),"env",fill="black")   #Call the method text to insert the text ((x,y),text,fill_color)
+
+ scoreboard()                                                   #Call the scoreboard()
+ for i in range(int(agent_number)):   Call the agents and its components based on the number of agents
+  agent(i)
+  sequencer(i)
+  driver(i)
+  monitor(i)
+def scoreboard():  #Draw the scoreboard
+ draw.rectangle((150,40,350,80),fill="yellow",outline="black")   #Call the method rectangle with the desired parameters((x0,y0,x1,y1),fill_color,outline)
+
+ draw.text((225,50),"Scoreboard",fill="black")   #Call the method text to insert the text ((x,y),text,fill_color)
+
+def agent(y):   #Draw the agent
+#We need to determine the starting and ending co-ordinates based on the number of agents. So the calculations are made in such a way to determine the co-ordinates by diving the agent number
+ x = y * ((380/int(agent_number)) + 10)   #Determines the starting co-ordinate to draw the agent
+ z=380/int(agent_number)        #Determines the end co-ordinate 
+ draw.rectangle((50+x,90,z+50+x,300),fill="pink",outline="black")  #Call the method rectangle with the desired parameters((x0,y0,x1,y1),fill_color,outline)
+#If the agent number is 1 the co-ordinates are (50,90,430,300).  Similarly, the total available units are divided by the agent number to accommodate in it
+draw.text((55+x,90),"agent",fill="black") 
+def sequencer(y):
+ x = y * ((380/int(agent_number)) + 10)   #Determines the starting co-ordinate to draw the sequencer
+ z=190/int(agent_number)  #Determines the end co-ordinate
+ draw.rectangle((60+x,100,z+60+x,140),fill="pink",outline="black")   #Call the method rectangle with the desired parameters((x0,y0,x1,y1),fill_color,outline)
+draw.text((60+x,115),"sequencer",fill="black")
+def driver(y):  
+ x = y * ((380/int(agent_number)) + 10)   #Determines the starting co-ordinate to draw the driver
+ z=160/int(agent_number)    #Determines the end co-ordinate
+ draw.rectangle((60+x,180,z+60+x,220),fill="pink",outline="black")   #Call the method rectangle with the desired parameters((x0,y0,x1,y1),fill_color,outline)
+draw.text((65+x,190),"driver",fill="black")
+def monitor(y):
+ x = y * ((380/int(agent_number)) + 10)   #Determines the starting co-ordinate to draw the monitor
+ z=160/int(agent_number) #Determines the end co-ordinate
+ draw.rectangle((60+x+z+10,180,((z*2)+60+x),220),fill="pink",outline="black")  #Call the method rectangle with the desired parameters((x0,y0,x1,y1),fill_color,outline)
+draw.text((65+x+z,190),"monitor",fill="black")
+#Call the below methods 
+top()   
+test()
+env() 
+img.show()    #To display the resultant image
