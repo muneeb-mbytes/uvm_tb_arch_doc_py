@@ -15,16 +15,18 @@ class mem_agent extends uvm_agent;
   // build_phase
   function void build_phase(uvm_phase phase);
     super.build_phase(phase);
- 
+
+  //Creating driver and sequencer when the agent is active.
     if(get_is_active() == UVM_ACTIVE) begin
       driver = mem_driver::type_id::create("driver", this);
       sequencer = mem_sequencer::type_id::create("sequencer", this);
     end
- 
+  
+  //Creating monitor.
     monitor = mem_monitor::type_id::create("monitor", this);
   endfunction : build_phase
  
-  // connect_phase
+  // connect_phase:TLM port connection between sequencer and driver.
   function void connect_phase(uvm_phase phase);
     if(get_is_active() == UVM_ACTIVE) begin
       driver.seq_item_port.connect(sequencer.seq_item_export);
