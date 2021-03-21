@@ -5,9 +5,7 @@ class mem_driver extends uvm_driver #(mem_seq_item);
  
   `uvm_component_utils(mem_driver)
      
-  //uvm_analysis_port #(mem_seq_item) Drvr2Sb_port;
- 
-  // Constructor
+   // Constructor
   function new (string name, uvm_component parent);
     super.new(name, parent);
   endfunction : new
@@ -21,9 +19,13 @@ class mem_driver extends uvm_driver #(mem_seq_item);
   // run phase
   virtual task run_phase(uvm_phase phase);
     forever begin
+    //Polling for transaction from the TLM fifo. 
     seq_item_port.get_next_item(req);
-    //respond_to_transfer(req);
+
+    //Converting transaction level data to pin level data in this method and driving it on the virtual interface.
     drive();
+ 
+    //Indicating the transaction completion.
     seq_item_port.item_done();
     end
   endtask : run_phase
