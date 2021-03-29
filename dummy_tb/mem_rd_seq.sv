@@ -1,5 +1,6 @@
 class mem_rd_seq extends uvm_sequence#(mem_seq_item);
    
+  //Registering sequence with uvm factory
   `uvm_object_utils(mem_rd_seq)
     
   //Constructor
