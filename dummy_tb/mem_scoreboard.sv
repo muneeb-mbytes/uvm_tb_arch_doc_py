@@ -1,6 +1,9 @@
 class mem_scoreboard extends uvm_scoreboard;
  
+  //Registering scoreboard class with uvm factory
   `uvm_component_utils(mem_scoreboard)
+
+  //Declaring analysis port which will be connected to the analysis port in the monitor
   uvm_analysis_imp#(mem_seq_item, mem_scoreboard) item_collected_export;
  
   // new - constructor
@@ -13,7 +16,7 @@ class mem_scoreboard extends uvm_scoreboard;
     item_collected_export = new("item_collected_export", this);
   endfunction: build_phase
    
-  // write
+  // write method which will be triggered when a transaction is detected in the analysis port
   virtual function void write(mem_seq_item pkt);
     $display("SCB:: Pkt recived");
     pkt.print();
