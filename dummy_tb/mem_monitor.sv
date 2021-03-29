@@ -3,11 +3,13 @@ class mem_monitor extends uvm_monitor;
   // Virtual Interface
   virtual mem_if vif;
  
+  //Declaring analysis port for writing to the scoreboard
   uvm_analysis_port #(mem_seq_item) item_collected_port;
  
   // Placeholder to capture transaction information.
   mem_seq_item trans_collected;
  
+  //Registering monitor class with the factory
   `uvm_component_utils(mem_monitor)
  
   // new - constructor
@@ -27,6 +29,7 @@ class mem_monitor extends uvm_monitor;
   virtual task run_phase(uvm_phase phase);
     forever begin
       @(posedge vif.MONITOR.clk);
+      //Converting interface level data to transaction level data
       wait(vif.monitor_cb.wr_en || vif.monitor_cb.rd_en);
         trans_collected.addr = vif.monitor_cb.addr;
       if(vif.monitor_cb.wr_en) begin
@@ -42,6 +45,8 @@ class mem_monitor extends uvm_monitor;
         @(posedge vif.MONITOR.clk);
         trans_collected.rdata = vif.monitor_cb.rdata;
       end
+     
+      //Writing the transaction to the scoreboard
       item_collected_port.write(trans_collected);
     end
   endtask : run_phase
