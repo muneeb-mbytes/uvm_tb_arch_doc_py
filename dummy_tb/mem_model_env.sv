@@ -3,6 +3,8 @@ class mem_model_env extends uvm_env;
   //---------------------------------------
   // agent and scoreboard instance
   //---------------------------------------
+  
+  //Taking 6 instances of mem_agent
   mem_agent      mem_agnt_1;
   mem_agent      mem_agnt_2;
   mem_agent      mem_agnt_3;
@@ -10,8 +12,13 @@ class mem_model_env extends uvm_env;
   mem_agent      mem_agnt_5;
   mem_agent      mem_agnt_6;
 
+  //Taking instance of mem_agent_1
+  mem_agent_1    mem_agent_new;
+
+  //Taking scoreboard instance
   mem_scoreboard mem_scb;
    
+  //Registering the environment class with the factory
   `uvm_component_utils(mem_model_env)
    
   //---------------------------------------
@@ -27,6 +34,10 @@ class mem_model_env extends uvm_env;
   function void build_phase(uvm_phase phase);
     super.build_phase(phase);
  
+    //Creating agents and scoreboard
+    mem_agent_new= mem_agent_1::type_id::create("mem_agent_new", this);
+
+
     mem_agnt_1= mem_agent::type_id::create("mem_agnt_1", this);
     mem_agnt_2= mem_agent::type_id::create("mem_agnt_2", this);
     mem_agnt_3= mem_agent::type_id::create("mem_agnt_3", this);
@@ -40,6 +51,11 @@ class mem_model_env extends uvm_env;
   // connect_phase - connecting monitor and scoreboard port
   //---------------------------------------
   function void connect_phase(uvm_phase phase);
+
+  //Connecting the analysis port of monitor and scoreboard
+
+  mem_agent_new.monitor.item_collected_port.connect(mem_scb.item_collected_export);
+
     mem_agnt_1.monitor.item_collected_port.connect(mem_scb.item_collected_export);
 mem_agnt_2.monitor.item_collected_port.connect(mem_scb.item_collected_export);
 mem_agnt_3.monitor.item_collected_port.connect(mem_scb.item_collected_export);
