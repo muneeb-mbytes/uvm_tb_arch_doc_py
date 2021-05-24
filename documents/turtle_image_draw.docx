@@ -1,0 +1,65 @@
+Pre-requisites Done :
+•	Read and understood basics of Python
+•	Understood about installation and using python
+•	Learnt what is module, how it is imported and can be used in the code
+•	Drawing line, opening a jpeg file
+ 
+
+02/02/2020	Draw a rectangle and write text inside it (Exploring Turtle & ImageDraw modules)	•	Analyzed the modules Image Draw & Turtle
+•	Drawn a rectangle and wrote text inside it using required methods
+•	Read about manipulating with documents like .docx file using docx module
+			
+
+1.	Draw a rectangle and write text inside it (using Turtle & Image Draw modules)
+Analyzed the module ImageDraw module
+•	Created an empty image *.jpg file
+•	Drew a rectangle in that image using ImageDraw module
+•	Saved the image & using the Image Draw module, inserted the text inside the rectangle (by changing the required dimensions in trial and error manner)
+•	Added that .jpg file into a .docx document & saved that. (using docx module)
+Analyzed & tried with turtle 
+•	Created rectangle by traversing via directions and inserted text  inside the rectangle
+
+Using ImageDraw Module
+import docx
+from PIL import Image,ImageDraw
+doc = docx.Document()
+img = Image.new("RGB", (500, 500),"white") 
+# create a image draw handle
+img1 = ImageDraw.Draw(img)
+img1.rectangle((200,125,300,200),fill ="orange", outline = "black",width = 1)
+img1.text((210, 150), "CHECK TEXT", fill = "black",align = "center")
+img.show()
+img.save('C:\\Users\\path \\line.jpg');
+doc.add_picture('C:\\path \\line.jpg');
+doc.save('C:\\Users\\goushik\\Desktop\\New folder\\pattern_printing_ex.docx');
+
+
+
+Using Turtle :
+from turtle import *
+# Choose Color for rectangle
+color("orange")
+begin_fill() # Enabling fill to color the shape
+# Traverse in directions, to draw rectangle
+forward(300);
+right(90)
+forward(150)
+right(90)
+forward(300);
+right(90)
+forward(150)
+right(90)
+# End the coloring
+end_fill()
+color("BLACK") # Choose Black color to write
+begin_fill()
+penup()
+forward (150)
+#right (45)
+left(65)
+backward (20)
+write("TEXT INSIDE RECTANGLE USING TURTLE", True, align="center")
+#write("TEXT", True, align="center")
+
+
+
