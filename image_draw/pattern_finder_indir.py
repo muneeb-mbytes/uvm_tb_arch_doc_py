@@ -1,3 +1,5 @@
+# A function to search and identify the name of uvm components 
+#change the root directory name to use with respect to your files 
 import os
 def component_search(keyword):
     root_dir = r"\Users\ashik\Desktop\VLSI docx\FIFO"
@@ -17,7 +19,7 @@ def component_search(keyword):
                             break  # no need to iterate over the rest of the file
             except (IOError, OSError):
                 pass
-def tb_comps():
+def tb_comps(): #function to search the componenet names from log file 
         component_search("uvm_test")
         component_search("uvm_env")
         component_search("uvm_scoreboard")
