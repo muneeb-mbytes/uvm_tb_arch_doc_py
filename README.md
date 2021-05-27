@@ -2,7 +2,8 @@
   
 ## Introduction 
   uvm_tb_arch_doc_py is a python script to automatically generate the UVM testbench Architecture
-    It reads a UVM simulation log file and converts in to a JPEG  diagram 
+  
+  It reads a UVM simulation log file and converts in to a JPEG  diagram 
 
 ## What you Achieve
   A UVM Testbench Architecture Template using the PythonScript.
