@@ -19,11 +19,11 @@
   
   3) Libraries required:
  
-     -OpenCV ( To help with plotting the image and to also save the generated testbench image)
+     - OpenCV ( To help with plotting the image and to also save the generated testbench image)
      
-     -PIL (Includes functions like Image, ImageDraw. ImageFont)
+     - PIL (Includes functions like Image, ImageDraw. ImageFont)
      
-     -Tkinter (Help with setting up the canvas for plotting the image)
+     - Tkinter (Help with setting up the canvas for plotting the image)
      
   4) Packages to be installed:
      
