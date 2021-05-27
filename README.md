@@ -20,9 +20,7 @@
   3) Libraries required:
  
      -OpenCV ( To help with plotting the image and to also save the generated testbench image)
-     
      -PIL (Includes functions like Image, ImageDraw. ImageFont)
-     
      -Tkinter (Help with setting up the canvas for plotting the image)
      
   4) Packages to be installed:
@@ -33,6 +31,10 @@
 
 
 # Usage
+The PyCharm Editor is suitable to run this project as it provides an environment to install packages within a terminal present in the editor.
+
+First, open the Pycharm terminal.
+
 We are using Pycharm version to run the project 
 Open the Pycharm Terminla wondow
 File -> New project
