@@ -10,6 +10,9 @@
   
   Refer the pdf file attached in the main directory - uvm_tb_arch_doc_py_diagram.pdf
   
+  ![image](https://user-images.githubusercontent.com/61039744/119836958-ca11fd00-bf1f-11eb-8781-8a30b02779b7.png)
+
+  
 ## Requirements
   For generating the UVM TB Architecture we have to write an example testbench code (top, test, env, agent etc) in UVM Methodology.
   
@@ -49,7 +52,7 @@ The PyCharm Editor is suitable to run this project as it provides an environment
 
 7) Create a folder named  'log' in the project directory.
 
-8) Copy all the files into the Prject directory that has been created. (For example, the path I have created is C:\Users\Priya A\PycharmProjects\UVM_TB_ARCH)
+8) Copy all the files into the Project directory that has been created. (For example, the path I have created is C:\Users\Priya A\PycharmProjects\UVM_TB_ARCH)
 
 9) Make sure to copy the log file into the log folder in the project.(For example, suppose the log file has a name testbench.log, then the file should be in the folder named 'log')
 
