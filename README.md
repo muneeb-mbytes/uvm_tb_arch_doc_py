@@ -20,7 +20,9 @@
   3) Libraries required:
  
      -OpenCV ( To help with plotting the image and to also save the generated testbench image)
+     
      -PIL (Includes functions like Image, ImageDraw. ImageFont)
+     
      -Tkinter (Help with setting up the canvas for plotting the image)
      
   4) Packages to be installed:
@@ -33,7 +35,23 @@
 # Usage
 The PyCharm Editor is suitable to run this project as it provides an environment to install packages within a terminal present in the editor.
 
-First, open the Pycharm terminal.
+1) open the Pycharm editor.
+
+2) click File -> New Project.
+
+3) Create the project in a specific directory.
+
+4) Configure the base interpreter of python if it is already installed on the system. If python is not present in the system, install Pycharm and then there will be an option     provided to set a base interpreter.
+
+5) Create a virtual environment for your project. ( This setup will take 2-3 minutes). 
+
+6) Open the Pycharm terminal and install the packages one after another as mentioned in point 4) of the Requirements section.
+
+7) Create a folder named  log in the project directory.
+
+8) Copy all the files into the Prject directory that has been created. (For example, the path I have created is C:\User\
+
+9) Make sure to copy the log file into the log folder in the project.(For example, suppose the log file has a name testbench.log, then the file should be in the d
 
 We are using Pycharm version to run the project 
 Open the Pycharm Terminla wondow
