@@ -1,9 +1,14 @@
 # UVM Testbench Flow diagram with Python 
-
-## Usage
   
 ## Introduction 
-A python project to automatically generate the UVM testbench document. 
+  uvm_tb_arch_doc_py is  a python project to automatically generates the UVM testbench Architecture
+
+## Aim of the Porject
+  Generate A UVM Testbench Architecture Template using the PythonScript.
+  
+## Requirements
+  For generating the UVM TB Architecture we have to write an example testbench code (top, test, env, agent etc) in UVM Methodology.
+
 
 #Usage
 We are using Pycharm version to run the project 
