@@ -47,32 +47,24 @@ The PyCharm Editor is suitable to run this project as it provides an environment
 
 6) Open the Pycharm terminal and install the packages one after another as mentioned in point 4) of the Requirements section.
 
-7) Create a folder named  log in the project directory.
+7) Create a folder named  'log' in the project directory.
 
-8) Copy all the files into the Prject directory that has been created. (For example, the path I have created is C:\User\
+8) Copy all the files into the Prject directory that has been created. (For example, the path I have created is C:\Users\Priya A\PycharmProjects\UVM_TB_ARCH)
 
-9) Make sure to copy the log file into the log folder in the project.(For example, suppose the log file has a name testbench.log, then the file should be in the d
+9) Make sure to copy the log file into the log folder in the project.(For example, suppose the log file has a name testbench.log, then the file should be in the folder named 'log')
 
-We are using Pycharm version to run the project 
-Open the Pycharm Terminla wondow
-File -> New project
-create location 
-Configure the base interepreter for Python (use the latest intrepreter)
-Create a Virtual envronment (this takes around 2-3 minutes)
-Install the following packages by running the following command
-pip install pillow
-pip install opencv-pythom
-pip install python-docx
-Now the installation is completed 
-Create a new folder named log in the respective folder of the project
-Copy the respective files in to the pycharm project directory (Eg: i have created a director \priya\Pycharm\UVM_TB_ARCH)
+10) Execute the Python Script by clicking on the Run button in Pycharm
 
-execute the script by run 
+11) The output window will ask the user to enter the following:
+    
+    -  Enter the name of the log directory (Enter 'log')
+    
+    -  Enter the interfaces
+    
+    -  Enter the agents
+    
+    -  Enter the interfaces
+ 
+12) The output testbench will then be displayed in the background as per ther various inputs provided. 
 
-Enter the name of log directory
-Enter the interfaces
-Enter the agents
-Enter the interfaces 
-
-We get the TB diagram as per the number of interfaces we want and how many interfaces we want 
 
