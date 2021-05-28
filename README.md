@@ -38,6 +38,8 @@
 # Usage
 The PyCharm Editor is suitable to run this project as it provides an environment to install packages within a terminal present in the editor.
 
+-- Youtube link to be provided how to use 
+
 1) open the Pycharm editor.
 
 2) click File -> New Project.
