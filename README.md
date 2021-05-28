@@ -16,9 +16,9 @@
 ## Requirements
   For generating the UVM TB Architecture we have to write an example testbench code (top, test, env, agent etc) in UVM Methodology.
   
-  1) UVM Testbench log file in .txt format
+  1) UVM Testbench log file with extension .log format
   
-  2) Pycharm Editor 
+  2) Pycharm Editor (version 2021.1.1 x64)
   
   3) Libraries required:
  
@@ -62,11 +62,12 @@ The PyCharm Editor is suitable to run this project as it provides an environment
     
     -  Enter the name of the log directory (Enter 'log')
     
-    -  Enter the interfaces
+    -  Enter the number of interfaces (for eg:4)
     
-    -  Enter the agents
+    -  Enter the number of agents (for eg: 2)
     
-    -  Enter the interfaces
+    -  Enter the number of tb connect to DUT (for eg: 3  it depends on how many interfaces you want to conenct with DUT)
+
  
 12) The output testbench will then be displayed in the background as per ther various inputs provided. 
 
